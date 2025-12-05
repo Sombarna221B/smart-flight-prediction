@@ -1,6 +1,7 @@
 # ✈️ Smart Flight Purchase System (small project focused on integrating ML with Web)
 
 A machine learning + Flask web application that predicts flight ticket prices and recommends:
+
 ✔ Best time to purchase  
 ✔ Best route  
 ✔ Price estimate  
