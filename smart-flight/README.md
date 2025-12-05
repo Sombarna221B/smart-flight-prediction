@@ -31,35 +31,64 @@ Suggests the best possible route based on:
 
 ## 📂 Project Structure
 smart-flight-prediction/smart-flight
+
 │── app.py
+
 │── price_model.pkl
+
 │── processed_data_for_recommender.csv
+
 │── requirements.txt
+
 │── README.md
+
 │
 ├── templates/
+
 │ └── index.html
+
 │ └── result.html
+
 │
+
 ├── utils/
+
 | |__ __init__.py
+
 │ ├── utils_preprocess.py
+
 │ ├── utils_price_predictor.py
+
 │ ├── utils_time_recommender.py
+
 │ ├── utils_route_recommender.py
+
 │
+
 └── static/
+
 ├── css/
+
 │ └── style.css
+
 │ └── results.css
+
 ├── js/
+
 │ └── script.js
+
 └── images/
+
 └── bg_light.png
+
 └── bg_dark.png
+
 └── plane-ticket.png
+
 |__ plane.png
+
 └── clock.png
+
 |__ customer-journey.png
 
 ---
