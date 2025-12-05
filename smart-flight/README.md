@@ -75,8 +75,8 @@ smart-flight-prediction/smart-flight
 
 ## ⚙️ Installation
 
+
 ### 1️⃣ Clone the repository
-```bash
 git clone https://github.com<your-username>/smart-flight-prediction.git
 cd smart-flight-prediction
 
