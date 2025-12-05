@@ -96,8 +96,8 @@ smart-flight-prediction/smart-flight
 
 ## 🧠 ML Model
 - Trained in **Google Colab**
-- Preprocessed dataset → `processed_data.csv`
-- Final model exported as → `model.pkl`
+- Preprocessed dataset → `processed_data_for_recommender.csv`
+- Final model exported as → `price_model.pkl`
 - Algorithm used: **Random Forest Regressor**  
   *(customizable)*
 
