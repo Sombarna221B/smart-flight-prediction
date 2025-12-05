@@ -1,0 +1,171 @@
+/* ==========================
+   GLOBAL VARIABLES
+========================== */
+:root {
+    --bg: #eef6ff;
+    --text: #0a0a0a;
+    --card-bg: #ffffff;
+    --accent: #0066ff;
+    --accent-hover: #004ecc;
+}
+
+.dark {
+    --bg: #0b111a;
+    --text: #e7e7e7;
+    --card-bg: #111720;
+    --accent: #4ea3ff;
+    --accent-hover: #1a74d1;
+    background: var(--bg) url('/static/images/bg_dark.png') no-repeat center/cover;
+}
+
+/* BODY */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg) url('/static/images/bg_light.png') no-repeat center/cover;
+    transition: background 0.5s ease-in-out;
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Add subtle motion to background */
+body, .dark {
+    animation: bgShift 25s infinite alternate ease-in-out;
+}
+
+@keyframes bgShift {
+    0%   { background-position: center top; }
+    100% { background-position: center bottom; }
+}
+
+/* RESULT PAGE CONTAINER */
+.result-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* RESULT CARD */
+.result-card {
+    background: var(--card-bg);
+    width: 90%;
+    max-width: 450px;
+    padding: 5px 45px;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.18);
+    text-align: center;
+    position: relative;
+    height: fit-content;
+}
+
+/* HEADER */
+.result-card h1 {
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 1.5px;
+    color: var(--accent);
+}
+
+.header-icon {
+    width: 42px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* RESULT LIST STYLE */
+.result-list {
+    margin-top: 5px;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 12px;
+    background: rgba(0, 102, 255, 0.08);
+    border-radius: 10px;
+}
+
+.label {
+    text-align: left;
+    font-weight: 650;
+    font-size: 14px;
+}
+
+.value {
+    font-weight: 680;
+    color: var(--accent);
+    font-size: 16px;
+}
+
+/* MULTILINE VALUE FIX */
+.value.multiline {
+    text-align: right;  
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.value.multiline p {
+    margin: 3px 0;
+    line-height: 1.3;
+}
+
+.price {
+    font-size: 20px !important;
+}
+
+/* GO BACK BUTTON */
+.primary-btn {
+    background: var(--accent);
+    color: white;
+    padding: 14px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    font-size: 17px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background: var(--accent-hover);
+}
+
+/* THEME BUTTON */
+.theme-btn {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    background: var(--accent);
+    color: white;
+    padding: 10px 13px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    box-shadow: 0 2px 8px #0004;
+}
+
+/* SPECIAL FIX: Only Best Time to Book aligns right neatly */
+.result-item.best-time {
+    align-items: flex-start;     /* label stays left, text stays aligned top-right */
+}
+
+.result-item.best-time .label {
+    margin-top: 3px;             /* aligns label properly with multiline text */
+}
+
+.result-item.best-time .multiline {
+    text-align: left;
+    padding-left: 1.5px;
+    width: 70%;                  /* keeps text compact and neat on right side */
+}

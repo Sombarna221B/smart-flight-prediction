@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Flight Price Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script defer src="/static/js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- THEME TOGGLE -->
+    <button id="themeToggle" class="theme-btn">🌙</button>
+
+    <!-- MAIN LAYOUT -->
+    <div class="layout">
+
+        <!-- LEFT PANEL WITH ANIMATION -->
+        <div class="left-panel">
+            <div class="overlay-text">
+                <h1><img src="/static/images/customer-journey.png" alt="icon" class="header-icon">Smart Flight Price Predictor</h1>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Find the best fares with AI-powered insights</p>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL FORM -->
+        <div class="right-panel">
+            <div class="form-box">
+                <h2>Enter Flight Details<img src="/static/images/plane-ticket.png" alt="icon" class="header-icon"></h2>
+
+                <form action="/show_results" method="POST">
+
+                    <label>Airline</label>
+                    <select name="Airline" required>
+                        <option value="">Select Airline</option>
+                        <option>IndiGo</option>
+                        <option>Air India</option>
+                        <option>Jet Airways</option>
+                        <option>SpiceJet</option>
+                        <option>Multiple carriers</option>
+                        <option>GoAir</option>
+                        <option>Vistara</option>
+                        <option>Air Asia</option>
+                        <option>Jet Airways Business</option>
+                        <option>Multiple carriers Premium economy</option>
+                        <option>Trujet</option>
+                    </select>
+
+                    <label>Source</label>
+                    <select name="Source" required>
+                        <option value="">Select Source</option>
+                        <option>Delhi</option>
+                        <option>Mumbai</option>
+                        <option>Kolkata</option>
+                        <option>Banglore</option>
+                        <option>Chennai</option>
+                    </select>
+
+                    <label>Destination</label>
+                    <select name="Destination" required>
+                        <option value="">Select Destination</option>
+                        <option>New Delhi</option>
+                        <option>Kolkata</option>
+                        <option>Banglore</option>
+                        <option>Delhi</option>
+                        <option>Cochin</option>
+                        <option>Hyderabad</option>
+                    </select>
+
+                    <label>Date of Journey</label>
+                    <input type="date" name="Journey_Date" id="Journey_Date" required>
+
+                    <input type="hidden" name="Journey_Day" id="Journey_Day">
+                    <input type="hidden" name="Journey_Month" id="Journey_Month">
+                    <input type="hidden" name="Journey_Weekday" id="Journey_Weekday">
+
+                    <label>Duration (minutes)</label>
+                    <input type="number" name="Duration_min" placeholder="Total duration in minutes" required>
+
+                    <label>Total Stops</label>
+                    <select name="Total_Stops_num" required>
+                        <option value="">Select Stops</option>
+                        <option value="0">Non-stop</option>
+                        <option value="1">1 Stop</option>
+                        <option value="2">2 Stops</option>
+                        <option value="3">3 Stops</option>
+                    </select>
+
+                    <button type="submit" class="primary-btn">Predict Price</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('Journey_Date').addEventListener('change', function() {
+            const date = new Date(this.value);
+            document.getElementById('Journey_Day').value = date.getDate();
+            document.getElementById('Journey_Month').value = date.getMonth() + 1; // JS months start at 0
+            document.getElementById('Journey_Weekday').value = date.getDay(); // 0 = Sunday, 1 = Monday...
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flight Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
+    <script defer src="/static/js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- THEME TOGGLE -->
+    <button id="themeToggle" class="theme-btn">🌙</button>
+
+    <!-- RESULT CARD -->
+    <div class="result-container">
+        <div class="result-card">
+
+            <h1>
+                <img src="/static/images/clock.png" class="header-icon">
+                Prediction Summary
+                <img src="/static/images/plane.png" class="header-icon">
+            </h1>
+
+            <div class="result-list">
+
+                <div class="result-item">
+                    <span class="label">Predicted Price</span>
+                    <span class="value price">₹{{ predicted_price }}</span>
+                </div>
+
+                <div class="result-item best-time">
+                    <span class="label">Best Time to Book</span>
+                    <div class="value multiline">
+                        <p><strong style="color:#2f39be;">Best months:</strong> {{ best_months }}</p>
+                        <p><strong style="color:#2f39be;">Cheapest weekdays:</strong> {{ best_weekdays }}</p>
+                        <p>&nbsp;&nbsp;</p>
+                        <p><strong>{{ best_advice }}</strong></p>
+                    </div>
+                </div>
+
+                <div class="result-item">
+                    <span class="label">Recommended Route</span>
+                    <span class="value">{{ best_route }}</span>
+                </div>
+
+                <div class="result-item">
+                    <span class="label">Route Score</span>
+                    <span class="value">{{ route_score }} / 100</span>
+                </div>
+
+            </div>
+
+            <div class="centered">
+                <a href="/"><button class="primary-btn">Go Back</button></a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
