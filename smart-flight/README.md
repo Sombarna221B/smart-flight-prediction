@@ -78,6 +78,8 @@ smart-flight-prediction/smart-flight
 
 ### 1️⃣ Clone the repository
 git clone https://github.com<your-username>/smart-flight-prediction.git
+
+
 cd smart-flight-prediction
 
 ### 2️⃣ Install dependencies
